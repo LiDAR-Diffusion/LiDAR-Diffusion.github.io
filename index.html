@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=0.2">
+  <meta charset="utf-8">
+  <meta name="description" content="LiDAR Diffusion">
+  <meta name="keywords" content="LiDAR Generation">
+  <title>LiDAR Diffusion</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L1SGXGX6LF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L1SGXGX6LF');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu"></div>
+</nav>
+
+
+
+
+<!-- Title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><img id="painting_icon1" width="5%" src="./static/images/logo.png" style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px;"> <span style="color:Tomato;">LiDAR Diffusion</span> <img id="painting_icon2" width="5%" src="./static/images/logo.png" style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px;"></h1>
+          <h1 class="title is-2 publication-title">Towards Realistic Scene Generation with LiDAR Diffusion Models</h1>
+
+          <div class="is-size-5 publication-authors">
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://hancyran.github.io/">Haoxi Ran</a><br/>
+              <span class="author-block" style="font-size: 16px">Carnegie Mellon University</span>
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com.br/citations?user=UH9tP6QAAAAJ&hl=en">Vitor Guizilini</a><br/>
+              <span class="author-block" style="font-size: 16px">Toyota Research Institute</a></span>
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://yuewang.xyz/">Yue Wang</a><br/>
+              <span class="author-block" style="font-size: 16px">University of Southern California</span></span>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="font-style: italic; font-family: serif;"><b>CVPR 2024</b></span>
+            </div>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.00815" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2404.00815.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/hancyran/LiDAR-Diffusion" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+<!--              <span class="link-block">-->
+<!--                <a href="https://huggingface.co/spaces/LiheYoung/Depth-Anything" target="_blank"-->
+<!--                  class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                    <i class="far fa-images"></i>-->
+<!--                  </span>-->
+<!--                  <span>Demo</span>-->
+<!--                </a>-->
+<!--              </span>-->
+<!--              <span class="link-block">-->
+<!--                <a href="https://huggingface.co/spaces/LiheYoung/Depth-Anything/tree/main" target="_blank"-->
+<!--                  class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                    <i class="fas fa-share-square"></i>-->
+<!--                  </span>-->
+<!--                  <span>Model</span>-->
+<!--                </a>-->
+<!--              </span>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" width="100%" src="./static/images/teaser.jpg"/>
+    </div>
+  </div>
+</section>
+
+<!-- Description -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="subtitle has-text-centered">
+        <div class="content has-text-justified"> 
+          <p>
+            LiDAR Diffusion allows controllability of semantic maps, cameras, bounding boxes, text, etc.
+          </p>
+        </div>
+      </h4>
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- Unconditional Generation -->
+<section class="hero is-small" style="margin-top: 30px; padding-top: 0px;">
+  <h2 class="title is-4" style="text-align: center;">Comparisons on Unconditional Generation</h2>
+  <div class="hero-body">
+    
+    <div class="container">
+      <div id="results-uncond" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="./static/images/uncond/uncond_1.jpg" alt="Steve GIF" width="100%"><br/><span style="color: black; font-size: 18px"><table style="width:100%"><thead><tr><th style="width:25%">Reference</th><th style="width:25%">LiDARGen</th><th style="width:25%">Latent Diffusion</th><th style="width:25%; color: orangered">LiDAR Diffusion</th></tr></thead></table></span>
+        </div>
+        <div class="item item-steve">
+          <img src="./static/images/uncond/uncond_2.jpg" alt="Steve GIF" width="100%">
+        </div>
+        </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- Semantic Map to LiDAR -->
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;">Semantic-Map-to-LiDAR</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width" style="text-align: center">
+        <p>
+          LiDAR Diffusion allows <b>image-based conditioning</b> with concatenation operation (e.g., semantic maps).
+        </p>
+      </div>
+    </div>
+  </div>
+    <div class="hero-body">
+    <div class="container">
+      <div id="results-sem2lidar" class="carousel results-carousel">
+      <div class="column is-full-width">
+        <video poster="" id="ade" autoplay controls muted loop playsinline height="10%">
+          <source src="./videos/map2lidar/map2lidar_clip_2.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-full-width">
+        <video poster="" id="ade" autoplay controls muted loop playsinline height="10%">
+          <source src="./videos/map2lidar/map2lidar_clip_3.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Camera to LiDAR -->
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;">Camera-to-LiDAR</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width" style="text-align: center">
+        <p>
+          LiDAR Diffusion accepts <b>token-based conditioning</b> through cross-attention mechanism.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-cam2lidar" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="./static/images/cam2lidar/cam2lidar_1.jpg" alt="Steve GIF" width="100%">
+        </div>
+        <div class="item item-steve">
+          <img src="./static/images/cam2lidar/cam2lidar_2.jpg" alt="Steve GIF" width="100%">
+        </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Text to LiDAR -->
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;"><span style="font-family: 'serif'"><i>Zero-shot</i></span>&nbsp;&nbsp;Text-to-LiDAR</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width" style="text-align: center">
+        <p>
+          LiDAR Diffusion can be controlled by text with a <b>pretrained CLIP-based</b> Camera-to-LiDAR LiDM.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-text2lidar" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="./static/images/text2lidar/text2lidar_1.jpg" alt="Steve GIF" width="100%">
+        </div>
+        <div class="item item-steve">
+          <img src="./static/images/text2lidar/text2lidar_2.jpg" alt="Steve GIF" width="100%">
+        </div>
+        <div class="item item-steve">
+          <img src="./static/images/text2lidar/text2lidar_3.jpg" alt="Steve GIF" width="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Plots -->
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;">LiDAR Synthesis Quality with different Scaling Factors</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width center">
+        <img id="plot1" width="49.9%" src="./static/images/lidm_frid.png"/><img id="plot2" width="49.9%" src="./static/images/lidm_fsvd.png"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Design of LiDAR Compression -->
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;">Reconstruction (val) with different Scaling Factors</h2>
+  <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/gt__all_3d.mp4" type="video/mp4"></video><br/><span><b>Ground Truth</b></span></div>
+
+    <div class="hero-body">
+    <div class="container">
+      <div id="results-hybrid" class="carousel results-carousel">
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c4_p2_all_3d.mp4" type="video/mp4"></video><br/><span><b>Hybrid Encoding</b><br/>Compression Rate: 16</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c2_p4_all_3d.mp4" type="video/mp4"></video><br/><span><b>Hybrid Encoding</b><br/>Compression Rate: 32</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="hero-body">
+    <div class="container">
+      <div id="results-curve" class="carousel results-carousel">
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c16_all_3d.mp4" type="video/mp4"></video><br/><span><b>Curvewise Encoding</b><br/>Compression Rate: 16</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c32_all_3d.mp4" type="video/mp4"></video><br/><span><b>Curvewise Encoding</b><br/>Compression Rate: 32</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="hero-body">
+    <div class="container">
+      <div id="results-patch" class="carousel results-carousel">
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_p4_all_3d.mp4" type="video/mp4"></video><br/><span><b>Patchwise Encoding</b><br/>Compression Rate: 16</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_p8_all_3d.mp4" type="video/mp4"></video><br/><span><b>Patchwise Encoding</b><br/>Compression Rate: 64</span></div>
+      </div>
+    </div>
+    </div>
+</section>
+
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion models (DMs) excel in photo-realistic image synthesis, but their adaptation to LiDAR scene generation poses a substantial hurdle. This is primarily because DMs operating in the point space struggle to preserve the curve-like patterns and 3D geometry of LiDAR scenes, which consumes much of their representation power. In this paper, we propose LiDAR Diffusion Models (LiDMs) to generate LiDAR-realistic scenes from a latent space tailored to capture the realism of LiDAR scenes by incorporating geometric priors into the learning pipeline. Our method targets three major desiderata: pattern realism, geometry realism, and object realism. Specifically, we introduce curve-wise compression to simulate real-world LiDAR patterns, point-wise coordinate supervision to learn scene geometry, and patch-wise encoding for a full 3D object context.  With these three core designs, our method achieves competitive performance on unconditional LiDAR generation in 64-beam scenario and state of the art on conditional LiDAR generation, while maintaining high efficiency compared to point-based DMs (up to 107x faster). Furthermore, by compressing LiDAR scenes into a latent space, we enable the controllability of DMs with various conditions such as semantic maps, camera views, and text prompts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- BibTex -->
+<section class="section pt-0" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-4">Citation</h2>
+    <pre class="selectable"><code>@inproceedings{ran2024towards,
+    title={Towards Realistic Scene Generation with LiDAR Diffusion Models},
+    author={Ran, Haoxi and Guizilini, Vitor and Wang, Yue},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2404.00815.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/hancyran/LiDAR-Diffusion" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="content">
+        <p>
+          The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
