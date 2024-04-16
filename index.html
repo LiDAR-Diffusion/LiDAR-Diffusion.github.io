@@ -303,13 +303,21 @@
 <!-- Design of LiDAR Compression -->
 <section class="section"  style="margin-top: 0; padding-top: 50px;">
   <h2 class="title is-4" style="text-align: center;">Reconstruction (val) with Different Scaling Factors</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width" style="text-align: center">
+        <p>
+          Perceptual Metrics: Fréchet <i>Range Image</i> Distance (FRID), Fréchet <i>Sparse Volume</i> Distance (FSVD). Through a comprehensive study, we demonstrate both effectiveness and efficiency of Hybrid (Curvewise+Patchwise) Encoding for LiDAR Compression.
+        </p>
+      </div>
+    </div>
+  </div>
   <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/gt__all_3d.mp4" type="video/mp4"></video><br/><span><b>Ground Truth</b></span></div>
-
     <div class="hero-body">
     <div class="container">
       <div id="results-hybrid" class="carousel results-carousel">
-         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c4_p2_all_3d.mp4" type="video/mp4"></video><br/><span><b>Hybrid Encoding</b><br/>Compression Rate: 16</span></div>
-         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c2_p4_all_3d.mp4" type="video/mp4"></video><br/><span><b>Hybrid Encoding</b><br/>Compression Rate: 32</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c4_p2_all_3d.mp4" type="video/mp4"></video><br/><span><b>Hybrid Encoding</b> (Compression Rate: 16)<br/>For Synthesis (LiDM), FRID(↓): 145 | FSVD(↓): 77</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c2_p4_all_3d.mp4" type="video/mp4"></video><br/><span><b>Hybrid Encoding</b> (Compression Rate: 32)<br/>For Synthesis (LiDM), FRID(↓): 162 | FSVD(↓): 56</span></div>
       </div>
     </div>
     </div>
@@ -317,8 +325,8 @@
     <div class="hero-body">
     <div class="container">
       <div id="results-curve" class="carousel results-carousel">
-         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c16_all_3d.mp4" type="video/mp4"></video><br/><span><b>Curvewise Encoding</b><br/>Compression Rate: 16</span></div>
-         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c32_all_3d.mp4" type="video/mp4"></video><br/><span><b>Curvewise Encoding</b><br/>Compression Rate: 32</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c8_all_3d.mp4" type="video/mp4"></video><br/><span><b>Curvewise Encoding</b> (Compression Rate: 8)<br/>For Synthesis (LiDM), FRID(↓): 162 | FSVD(↓): 85</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_c16_all_3d.mp4" type="video/mp4"></video><br/><span><b>Curvewise Encoding</b> (Compression Rate: 16)<br/>For Synthesis (LiDM), FRID(↓): 142 | FSVD(↓): 116</span></div>
       </div>
     </div>
     </div>
@@ -326,8 +334,8 @@
     <div class="hero-body">
     <div class="container">
       <div id="results-patch" class="carousel results-carousel">
-         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_p4_all_3d.mp4" type="video/mp4"></video><br/><span><b>Patchwise Encoding</b><br/>Compression Rate: 16</span></div>
-         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_p8_all_3d.mp4" type="video/mp4"></video><br/><span><b>Patchwise Encoding</b><br/>Compression Rate: 64</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_p4_all_3d.mp4" type="video/mp4"></video><br/><span><b>Patchwise Encoding</b> (Compression Rate: 16)<br/>For Synthesis (LiDM), FRID(↓): 180 | FSVD(↓): 60</span></div>
+         <div class="column is-full-width" style="text-align: center"><video poster="" id="ade" autoplay controls muted loop playsinline height="10%"><source src="./videos/reconstruction_pcd/recons_p8_all_3d.mp4" type="video/mp4"></video><br/><span><b>Patchwise Encoding</b> (Compression Rate: 64)<br/>For Synthesis (LiDM), FRID(↓): 192 | FSVD(↓): 88</span></div>
       </div>
     </div>
     </div>
